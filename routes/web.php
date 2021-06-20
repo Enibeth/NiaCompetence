@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UsuariosController;
+use App\Http\Controllers\CategoriaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,3 +22,5 @@ Route::get('/login', function () {
     return view('login');
 });
 
+Route::post("/login", [UsuariosController::class, 'login']);
+Route::get("/", [CategoriaController::class, 'index']);
