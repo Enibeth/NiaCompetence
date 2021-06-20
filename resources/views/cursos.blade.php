@@ -32,7 +32,8 @@
                      
                 </div>
             </div>
-        </section><!-- End Features Section -->
+        </div>
+    </section><!-- End Features Section -->
 
 @endsection
 
