@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="agregar-Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
+<div class="modal fade" id="agregar-categoria-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <form class="form-group" action="/agregar_Categoria" method="POST" autocomplete="off">

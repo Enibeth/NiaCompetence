@@ -26,3 +26,5 @@ Route::post("/login", [UsuariosController::class, 'login']);
 Route::get("/cursos", [CategoriaController::class, 'index']);
 
 Route::post("agregar_Categoria", [CategoriaController::class, 'agregarCategoria']);
+Route::post("eliminar_Categoria/{id}", [CategoriaController::class, 'eliminarCategoria']);
+

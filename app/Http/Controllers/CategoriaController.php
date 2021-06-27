@@ -26,4 +26,9 @@ class CategoriaController extends Controller
         $categoria->save();
         return redirect('/cursos');
     }
+
+    function eliminarCategoria($id){
+        Categoria_cursos::destroy($id);
+        return redirect('/cursos');
+    }
 }
