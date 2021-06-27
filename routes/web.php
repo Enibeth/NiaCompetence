@@ -24,3 +24,5 @@ Route::get('/login', function () {
 
 Route::post("/login", [UsuariosController::class, 'login']);
 Route::get("/cursos", [CategoriaController::class, 'index']);
+
+Route::post("agregar_Categoria", [CategoriaController::class, 'agregarCategoria']);
