@@ -1,7 +1,11 @@
 @extends('master')
 @section('content')
-@include('modal/agregarCategria')
+@include('modal/agregarCategoria')
 
+@foreach ($categorias as $item)
+    @include('modal/eliminarCategoria')
+    @include('modal/editarCategoria')
+@endforeach 
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
         <div class="container">
@@ -22,20 +26,22 @@
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 <div class="row d-flex justify-content-evenly" data-aos="zoom-in" data-aos-delay="100">
                     @foreach ($categorias as $item)
-                    <?php 
-                        $cursoId = $item['id'];
-                    ?>
-                        @include('modal/eliminarCategoria',['item'=>$item])
+                        
                         <div class="col-lg-3 col-md-4 mt-4 mt-md-0 align-items-center"> 
                             <div class="icon-box">
                                 <i class="{{$item['icono']}}" style="color: {{$item['color']}}"></i>
                                 <h3><a href="">{{$item['nombre']}}</a></h3>
 
-                                <button class="btn ri-edit-line" style="color: blue"></button>
-                                <button class="btn ri-delete-bin-2-line" style="color: red" data-toggle="modal" data-target="#eliminar-categoria-modal">
-                                    <!-- <a href="/eliminar_Categoria/{{$item['id']}}"></a> -->
-                                </button>
-                                
+                                 <!-- Boton editar categoria -->
+                                <button class="btn ri-edit-line" style="color: blue" data-toggle="modal" 
+                                    data-target="#editar-categoria-modal{{$item['id']}}">
+                                </button> 
+
+
+                                 <!-- Boton eliminar categoria -->
+                                <button class="btn ri-delete-bin-2-line" style="color: red" data-toggle="modal" 
+                                        data-target="#eliminar-categoria-modal{{$item['id']}}">
+                                </button>          
                             </div>
                         </div>  
                      @endforeach 

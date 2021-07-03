@@ -1,3 +1,11 @@
+<?php
+  use App\Http\Controllers\UsuariosController;
+  $isAdmin = 0;
+  if(Session::has('usuario')){
+      $isAdmin = UsuariosController::isAdmin();
+  }
+?>
+
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top bg-dark">
     <div class="container d-flex align-items-center">
@@ -8,7 +16,7 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html">Inicio</a></li>
+          <li><a href="index.html">Inicio {{$isAdmin}}</a></li>
           <li><a href="about.html">Acerca de</a></li>
           <li><a href="courses.html">Cursos</a></li>
           <li><a href="trainers.html">Instructores</a></li>

@@ -26,9 +26,10 @@
                   Copiar el contenido dentro de "class"   
               </small>
               <br />
-              <div class="form-group">
+              <div class="form-label">
                 <label for="colorCategoria">Color</label>
-                <input type="text" class="form-control" id="colorCategoria" name="colorCategoria" placeholder="Color">
+                <input type="color" class="form-label" id="colorCategoria" name="colorCategoria" placeholder="Color"
+                  value = "#563d7c">
               </div>
 
           </div>

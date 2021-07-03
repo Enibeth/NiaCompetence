@@ -31,4 +31,16 @@ class CategoriaController extends Controller
         Categoria_cursos::destroy($id);
         return redirect('/cursos');
     }
+
+    function editarCategoria(Request $req, $id){
+        $categoria = Categoria_cursos::find($id);
+
+        $categoria->nombre = $req->nombreCategoria;
+        $categoria->icono = $req->iconoCategoria;
+        $categoria->color = $req->colorCategoria;
+
+        $categoria->save();
+
+        return redirect('/cursos')->with('success', 'Categoria Editada');
+    }
 }

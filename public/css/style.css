@@ -1552,3 +1552,7 @@ section {
   color: #fff;
   text-decoration: none;
 }
+
+.modal-dialog {
+  z-index: 10;
+}

@@ -27,4 +27,4 @@ Route::get("/cursos", [CategoriaController::class, 'index']);
 
 Route::post("agregar_Categoria", [CategoriaController::class, 'agregarCategoria']);
 Route::post("eliminar_Categoria/{id}", [CategoriaController::class, 'eliminarCategoria']);
-
+Route::post("editar_Categoria/{categoria}", [CategoriaController::class, 'editarCategoria']);
