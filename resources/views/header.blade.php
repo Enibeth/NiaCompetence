@@ -1,9 +1,10 @@
 <?php
   use App\Http\Controllers\UsuariosController;
+  
   $isAdmin = 0;
   if(Session::has('usuario')){
       $isAdmin = UsuariosController::isAdmin();
-  }
+  }      
 ?>
 
 <!-- ======= Header ======= -->
@@ -16,14 +17,19 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a href="index.html">Inicio {{$isAdmin}}</a></li>
+          <li><a href="index.html">Inicio</a></li>
           <li><a href="about.html">Acerca de</a></li>
-          <li><a href="courses.html">Cursos</a></li>
-          <li><a href="trainers.html">Instructores</a></li>
+          <li><a href="/cursos">Cursos</a></li>
+          <li><a href="/instructores">Instructores</a></li>
           <li><a href="events.html">Noticias</a></li>
           <li class="dropdown"><a href="#"><span>Partner Bussines</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdAMF29tkYzDrzn2BSHx637T8odbaQyE6xfHpPoJNOpsuZ3Ag/viewform">Inscríbase aquí</a></li>
+              @if ($isAdmin == 0)
+                <li><a href="/login">Login</a></li>
+              @else 
+                <li><a href="/logout">Cerrar Sesion</a></li>
+              @endif
             </ul>
           </li>
           <li><a href="contact.html">Contacto</a></li>

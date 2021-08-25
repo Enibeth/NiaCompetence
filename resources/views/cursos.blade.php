@@ -32,24 +32,27 @@
                                 <i class="{{$item['icono']}}" style="color: {{$item['color']}}"></i>
                                 <h3><a href="">{{$item['nombre']}}</a></h3>
 
-                                 <!-- Boton editar categoria -->
-                                <button class="btn ri-edit-line" style="color: blue" data-toggle="modal" 
-                                    data-target="#editar-categoria-modal{{$item['id']}}">
-                                </button> 
+                                @If (Session::has('usuario') and Session::get('usuario')['tipo']== 1)
+                                    <!-- Boton editar categoria -->
+                                    <button class="btn ri-edit-line" style="color: blue" data-toggle="modal" 
+                                        data-target="#editar-categoria-modal{{$item['id']}}">
+                                    </button> 
 
 
-                                 <!-- Boton eliminar categoria -->
-                                <button class="btn ri-delete-bin-2-line" style="color: red" data-toggle="modal" 
-                                        data-target="#eliminar-categoria-modal{{$item['id']}}">
-                                </button>          
+                                    <!-- Boton eliminar categoria -->
+                                    <button class="btn ri-delete-bin-2-line" style="color: red" data-toggle="modal" 
+                                            data-target="#eliminar-categoria-modal{{$item['id']}}">
+                                    </button>     
+                                @endif     
                             </div>
                         </div>  
                      @endforeach 
                 </div>
             </div>
             
-            <button class="btn btn-primary" data-toggle="modal" data-target="#agregar-categoria-modal">Agregar Categoria</button>
-            
+            @If (Session::has('usuario') and Session::get('usuario')['tipo']== 1)
+                <button class="btn btn-primary" data-toggle="modal" data-target="#agregar-categoria-modal">Agregar Categoria</button>
+            @endif  
         </div>
     </section><!-- End Features Section -->
 @endsection

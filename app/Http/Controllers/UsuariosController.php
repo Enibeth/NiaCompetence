@@ -18,7 +18,7 @@ class UsuariosController extends Controller
         }
         else{
             $req->session()->put('usuario', $usuario);
-            return redirect('/');
+            return redirect('/cursos');
         }
     }
 

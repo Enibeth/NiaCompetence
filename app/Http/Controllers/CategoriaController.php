@@ -13,11 +13,6 @@ class CategoriaController extends Controller
     }
 
     function agregarCategoria(Request $req){
-        //if($req->session()->has('usuario')){
-            //se puede agarrar y ver si el usuario es admin  
-            //$req->session()->get('usuario')['id'];
-            //return "ha";
-        //}
         $categoria = new Categoria_cursos();
         $categoria->nombre = $req->nombreCategoria;
         $categoria->icono = $req->iconoCategoria;
